@@ -1,10 +1,10 @@
 <template>
-  
+  <section class="app-form"></section>
 </template>
 
 <script>
   export default {
-    name: "list"
+    name: "appForm"
   }
 </script>
 
