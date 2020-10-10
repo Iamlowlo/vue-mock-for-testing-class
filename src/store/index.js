@@ -22,9 +22,9 @@ export const store = new Vuex.Store({
       const breeds = await dogService.getAll()
       commit('setBreeds', breeds)
     },
-    getBreedImages: async ({ commit }, { breedName, amount }) => {
-      const breedImages = await dogService.getBreedImages(breedName, amount)
-      commit('setBreedImages', { images: breedImages })
+    getBreedImages: async ({ commit }, { name, amount }) => {
+      const breedImages = await dogService.getBreedImages(name, amount)
+      commit('setActiveBreed', { images: breedImages })
     },
     getSubBreedImages: async ({ commit }, { breedName, subBreedName, amount }) => {
       const subBreedImages = await dogService.getSubBreedImages(breedName, subBreedName, amount)
@@ -55,5 +55,10 @@ export const store = new Vuex.Store({
       }
     }
   },
-  getters: {}
+  getters: {
+    breeds: state => state.breeds,
+    getBreedByName: state => breedName => state.breeds.find(breed => breed.name === breedName),
+    activeBreed: state => state.activeBreed,
+    activeSubBreed: state => state.activeSubBreed
+  }
 })
