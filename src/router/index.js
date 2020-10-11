@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import List from '@/views/List.vue'
-import Detail from '@/views/Detail.vue'
-import Form from '@/views/Form.vue'
+import List from '@/views/Home.vue'
+import Breed from '@/views/Breed.vue'
+import SubBreed from '@/views/SubBreed.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,14 +12,14 @@ const routes = [
     component: List
   },
   {
-    path: '/detail/:name',
-    name: 'Detail',
-    component: Detail
+    path: '/breed/:name',
+    name: 'Breed',
+    component: Breed
   },
   {
-    path: '/form/:id?',
-    name: 'Form',
-    component: Form
+    path: '/breed/:breedName/sub-breed/:subBreedName',
+    name: 'SubBreed',
+    component: SubBreed
   }
 ]
 

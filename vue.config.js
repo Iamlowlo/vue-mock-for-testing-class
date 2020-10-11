@@ -1,7 +1,5 @@
 const path = require('path')
 
-console.log('________', path.resolve(__dirname, './src/styles/reset.scss'))
-
 module.exports = {
   css: {
     loaderOptions: {

@@ -48,10 +48,10 @@ export const store = new Vuex.Store({
     } ,
     setActiveSubBreed: (state, {name, images}) => {
       if (name) {
-        state.activeBreed.name = name
+        state.activeSubBreed.name = name
       }
       if (images) {
-        state.activeBreed.images = images
+        state.activeSubBreed.images = images
       }
     }
   },

@@ -1,10 +1,10 @@
 <template>
-  <section class="app-list">
-    <h1 class="app-list__title">Listado</h1>
-    <ul class="app-list__group">
+  <section class="home">
+    <h1 class="home__title">Listado</h1>
+    <ul class="home__list">
       <li v-for="(breed, index) in breeds"
           :key="`appList-${index}`"
-          class="app-list__element"
+          class="home__element"
           @click="selectBreed(breed.name)"
       >{{breed.name}}</li>
     </ul>
@@ -14,7 +14,7 @@
 <script>
   import { mapGetters, mapActions, mapMutations } from 'vuex'
   export default {
-    name: 'appList',
+    name: 'home',
     computed: {
       ...mapGetters(['breeds', 'getBreedByName'])
     },
@@ -24,7 +24,7 @@
       selectBreed(breedName) {
         const selectedBreed = this.getBreedByName(breedName)
         this.setActiveBreed(selectedBreed)
-        this.$router.push({ name: 'Detail', params: { name: breedName }})
+        this.$router.push({ name: 'Breed', params: { name: breedName }})
       }
     },
     mounted() {
@@ -34,8 +34,8 @@
 </script>
 
 <style lang="scss" scoped>
-  .app-list {
-    &__group {
+  .home {
+    &__list {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       margin: 0 auto;
